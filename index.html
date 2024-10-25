@@ -8,9 +8,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
         body {
+            padding-top: 76px;
             background-color: #0f172a;
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
         }
-
+        
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/mine.jpeg');
             background-size: cover;
@@ -21,8 +25,9 @@
             color: white;
             position: relative;
             overflow: hidden;
+            margin-top: -76px;
         }
-
+        
         .hero-section::after {
             content: '';
             position: absolute;
@@ -32,7 +37,7 @@
             height: 150px;
             background: linear-gradient(to top, #0f172a, transparent);
         }
-
+        
         .hero-content {
             position: relative;
             z-index: 2;
@@ -63,7 +68,7 @@
             box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
             background: #27ae60;
         }
-
+        
         .minecraft-font {
             font-family: 'Helvetica', sans-serif;
             text-transform: uppercase;
@@ -71,19 +76,25 @@
             font-weight: bold;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
-
+        
         .feature-img {
             height: 200px;
             object-fit: cover;
         }
-
+        
+        /* Estilos mejorados del navbar */
         .custom-navbar {
-            background: rgba(0, 0, 0, 0.95) !important;
+            background: #000000 !important;
             padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1030;
             transition: all 0.3s ease;
         }
-
+        
         .nav-link {
             color: #ffffff !important;
             font-weight: 500;
@@ -92,12 +103,12 @@
             border-radius: 25px;
             transition: all 0.3s ease;
         }
-
+        
         .nav-link:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
         }
-
+        
         .navbar-brand {
             font-size: 1.5rem;
             padding: 10px 20px;
@@ -105,21 +116,21 @@
             background: linear-gradient(45deg, #2ecc71, #27ae60);
             transition: all 0.3s ease;
         }
-
+        
         .navbar-brand:hover {
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
         }
-
+        
         .navbar-toggler {
             border: none;
-            padding: 10px;
+            padding: 8px;
         }
-
+        
         .navbar-toggler:focus {
             box-shadow: none;
         }
-
+        
         .mediafire-button {
             background: linear-gradient(45deg, #0077ff, #00a3ff);
             color: white;
@@ -139,13 +150,13 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 119, 255, 0.3);
         }
-
+        
         .mediafire-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 119, 255, 0.3);
             color: white;
         }
-
+        
         .mediafire-button::after {
             content: '';
             position: absolute;
@@ -157,11 +168,11 @@
             transform: rotate(45deg);
             transition: transform 0.6s;
         }
-
+        
         .mediafire-button:hover::after {
             transform: rotate(45deg) translate(50%, 50%);
         }
-
+        
         .download-card {
             background: rgba(17, 24, 39, 0.98);
             border-radius: 15px;
@@ -173,25 +184,25 @@
             transform: translateY(0);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .download-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
+        
         .download-info {
             background: rgba(255, 255, 255, 0.05);
             padding: 20px;
             border-radius: 12px;
             margin: 25px 0;
         }
-
+        
         .download-info p {
             margin: 10px 0;
             font-size: 1rem;
             color: #e2e8f0;
         }
-
+        
         .version-badge {
             background: linear-gradient(45deg, #2ecc71, #27ae60);
             padding: 8px 20px;
@@ -202,22 +213,22 @@
             margin: 15px 0;
             box-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
         }
-
+        
         .download-icon {
             font-size: 4rem;
             margin-bottom: 25px;
             animation: float 3s ease-in-out infinite;
         }
-
+        
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
-
+        
         .section-title {
             color: #ffffff;
-            font-size: clamp(1.8rem, 5vw, 2.5rem); /* Esto hace que el tamaño sea responsive */
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             text-transform: uppercase;
             letter-spacing: 4px;
             text-align: center;
@@ -225,10 +236,10 @@
             position: relative;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             font-weight: 800;
-            padding: 0 15px; /* Añade padding para pantallas pequeñas */
-            word-wrap: break-word; /* Permite que el texto se rompa si es necesario */
+            padding: 0 15px;
+            word-wrap: break-word;
         }
-    
+        
         .section-title::after {
             content: '';
             position: absolute;
@@ -240,11 +251,11 @@
             background: linear-gradient(45deg, #4ade80, #2ecc71);
             border-radius: 2px;
         }
-
+        
         .feature-card .card-body {
             padding: 1.5rem;
         }
-    
+        
         .feature-card .card-title {
             color: #ffffff;
             font-size: 1.25rem;
@@ -252,19 +263,19 @@
             margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
-    
+        
         .feature-card .card-text {
             color: #e2e8f0;
             font-size: 1rem;
             line-height: 1.6;
         }
-    
+        
         #caracteristicas {
             background-color: #0f172a;
             position: relative;
             padding: 5rem 0;
         }
-    
+        
         #caracteristicas::before {
             content: '';
             position: absolute;
@@ -275,179 +286,266 @@
             background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95));
             z-index: 1;
         }
-    
+        
         #caracteristicas .container {
             position: relative;
             z-index: 2;
         }
-
+        
+        /* Mejoras para móviles */
         @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
+        
+            body {
+                padding-top: 62px;
+            }
+        
             .hero-section {
                 min-height: 90vh;
+                margin-top: -62px;
             }
-
+        
+            .custom-navbar {
+                padding: 10px 0;
+            }
+        
+            .navbar-collapse {
+                position: fixed;
+                top: 62px;
+                left: 0;
+                width: 100%;
+                background: #000000;
+                padding: 1rem;
+                z-index: 1029;
+            }
+        
+            .navbar-collapse.show {
+                display: block;
+                animation: slideIn 0.3s ease-out;
+            }
+        
+            .navbar-nav {
+                padding-bottom: 10px;
+            }
+        
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+        
+            .nav-link {
+                padding: 15px !important;
+                margin: 5px 0;
+                width: 100%;
+            }
+        
             .display-1 {
                 font-size: 3rem;
             }
-
+        
             .lead {
                 font-size: 1.1rem;
                 padding: 0 15px;
             }
-
+        
             .download-button {
                 width: 90%;
                 max-width: 300px;
                 margin: 0 auto;
             }
-
+        
             .download-card {
                 margin: 10px;
                 padding: 20px;
                 background: #1a2234;
             }
-
+        
             .feature-card {
                 background: #1a2234;
             }
-
-            .custom-navbar {
-                background: #000000 !important;
+        
+            .section-title {
+                letter-spacing: 2px;
+                font-size: 1.8rem;
             }
         }
-
+        
+        @media (max-width: 320px) {
+            .section-title {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
         @media (min-width: 769px) {
             .hero-content {
                 margin-top: -50px;
             }
         }
-
+        
         .navbar.scrolled {
             background: rgba(0, 0, 0, 0.95) !important;
             padding: 10px 0;
         }
-
+        
         .animate__animated {
             animation-duration: 1s;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand minecraft-font" href="#">
-                Minecraft
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#descargar">Descargar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container">
+        <a class="navbar-brand minecraft-font" href="#">
+            Minecraft
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#descargar">Descargar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section" id="inicio">
+    <div class="hero-content container text-center">
+        <h1 class="display-1 minecraft-font animate__animated animate__fadeInDown">Minecraft</h1>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
+            ¡Explora, construye y sobrevive en un mundo infinito de posibilidades!
+        </p>
+        <a href="https://www.mediafire.com/file/i9x3z77asf9ez6x/minecraft-1-21-41-01-xbox-servers.apk/file" class="btn btn-success btn-lg download-button animate__animated animate__fadeInUp animate__delay-2s">
+            Descargar Ahora
+        </a>
+    </div>
+</section>
+
+<!-- Características -->
+<section class="py-5" id="caracteristicas">
+    <div class="container">
+        <h2 class="text-center mb-5 minecraft-font section-title">Características</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card animate__animated animate__fadeInLeft">
+                    <img src="https://th.bing.com/th/id/R.ae8a6eb8f04ef8701fd9124fef3c4de5?rik=ALpr3vCLhZ19Tg&pid=ImgRaw&r=0" class="card-img-top feature-img" alt="Mundo Abierto">
+                    <div class="card-body">
+                        <h5 class="card-title">Mundo Abierto</h5>
+                        <p class="card-text">Explora un mundo infinito y genera tu propia aventura.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card animate__animated animate__fadeInUp">
+                    <img src="https://staticg.sportskeeda.com/editor/2024/08/b5978-17227097960834-1920.jpg" class="card-img-top feature-img" alt="Multijugador">
+                    <div class="card-body">
+                        <h5 class="card-title">Multijugador</h5>
+                        <p class="card-text">Juega con amigos y construye increíbles estructuras juntos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card animate__animated animate__fadeInRight">
+                    <img src="https://media.forgecdn.net/avatars/thumbnails/1008/865/256/256/638531907632314953.jpeg" class="card-img-top feature-img" alt="Supervivencia">
+                    <div class="card-body">
+                        <h5 class="card-title">Supervivencia</h5>
+                        <p class="card-text">Sobrevive a las noches y enfrenta peligrosos enemigos.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="inicio">
-        <div class="hero-content container text-center">
-            <h1 class="display-1 minecraft-font animate__animated animate__fadeInDown">Minecraft</h1>
-            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">
-                ¡Explora, construye y sobrevive en un mundo infinito de posibilidades!
+<!-- Sección de Descarga -->
+<section class="bg-dark text-light py-5" id="descargar">
+    <div class="container text-center">
+        <h2 class="minecraft-font mb-4">Descarga Minecraft para Android</h2>
+        <div class="download-card">
+            <div class="download-icon">
+                📱
+            </div>
+            <h3 class="mb-3">Minecraft PE v1.21.41</h3>
+            <span class="version-badge">Última versión</span>
+            <div class="download-info">
+                <p>💾 Tamaño: 487MB</p>
+                <p>📱 Android 5.0 o superior</p>
+            </div>
+            
+            <a href="https://www.mediafire.com/file/i9x3z77asf9ez6x/minecraft-1-21-41-01-xbox-servers.apk/file" class="mediafire-button">
+                Descargar desde Mediafire
+            </a>
+            
+            <p class="mt-3" style="color: #a0aec0; font-size: 0.9rem;">
+                El archivo se descargará en formato .apk
             </p>
-            <a href="https://www.mediafire.com/file/i9x3z77asf9ez6x/minecraft-1-21-41-01-xbox-servers.apk/file" class="btn btn-success btn-lg download-button animate__animated animate__fadeInUp animate__delay-2s">
-                Descargar Ahora
-            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Características -->
-    <section class="py-5" id="caracteristicas">
-        <div class="container">
-            <h2 class="text-center mb-5 minecraft-font section-title">Características</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card feature-card animate__animated animate__fadeInLeft">
-                        <img src="https://th.bing.com/th/id/R.ae8a6eb8f04ef8701fd9124fef3c4de5?rik=ALpr3vCLhZ19Tg&pid=ImgRaw&r=0" class="card-img-top feature-img" alt="Mundo Abierto">
-                        <div class="card-body">
-                            <h5 class="card-title">Mundo Abierto</h5>
-                            <p class="card-text">Explora un mundo infinito y genera tu propia aventura.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card feature-card animate__animated animate__fadeInUp">
-                        <img src="https://staticg.sportskeeda.com/editor/2024/08/b5978-17227097960834-1920.jpg" class="card-img-top feature-img" alt="Multijugador">
-                        <div class="card-body">
-                            <h5 class="card-title">Multijugador</h5>
-                            <p class="card-text">Juega con amigos y construye increíbles estructuras juntos.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card feature-card animate__animated animate__fadeInRight">
-                        <img src="https://media.forgecdn.net/avatars/thumbnails/1008/865/256/256/638531907632314953.jpeg" class="card-img-top feature-img" alt="Supervivencia">
-                        <div class="card-body">
-                            <h5 class="card-title">Supervivencia</h5>
-                            <p class="card-text">Sobrevive a las noches y enfrenta peligrosos enemigos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+        <p>© 2024 Chucharizard</p>
+    </div>
+</footer>
 
-    <!-- Sección de Descarga -->
-    <section class="bg-dark text-light py-5" id="descargar">
-        <div class="container text-center">
-            <h2 class="minecraft-font mb-4">Descarga Minecraft para Android</h2>
-            <div class="download-card">
-                <div class="download-icon">
-                    📱
-                </div>
-                <h3 class="mb-3">Minecraft PE v1.21.41</h3>
-                <span class="version-badge">Última versión</span>
-                <div class="download-info">
-                    <p>💾 Tamaño: 487MB</p>
-                    <p>📱 Android 5.0 o superior</p>
-                </div>
-                
-                <a href="https://www.mediafire.com/file/i9x3z77asf9ez6x/minecraft-1-21-41-01-xbox-servers.apk/file" class="mediafire-button">
-                    Descargar desde Mediafire
-                </a>
-                
-                <p class="mt-3" style="color: #a0aec0; font-size: 0.9rem;">
-                    El archivo se descargará en formato .apk
-                </p>
-            </div>
-        </div>
-    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.custom-navbar');
+        
+        // Aplicar estilos iniciales
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        }
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-4">
-        <div class="container text-center">
-            <p>© 2024 Chucharizard</p>
-        </div>
-    </footer>
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    document.querySelector('.custom-navbar').classList.add('scrolled');
-                } else {
-                    document.querySelector('.custom-navbar').classList.remove('scrolled');
+        // Mejorar el comportamiento del menú en móviles
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.classList.add('collapsed');
+                    navbarToggler.setAttribute('aria-expanded', 'false');
                 }
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
