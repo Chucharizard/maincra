@@ -406,6 +406,25 @@
         .animate__animated {
             animation-duration: 1s;
         }
+        
+        /* Estilos para la sección de soporte */
+        #soporte .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        #soporte .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        #soporte .btn-primary:hover {
+            background: #4752c4 !important;
+        }
+        
+        #soporte .btn-success:hover {
+            background: #20c055 !important;
+        }
     </style>
 </head>
 <body>
@@ -527,6 +546,51 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Soporte -->
+<section class="py-5" id="soporte" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #2ecc71 100%);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span style="font-size:2.5rem;">🛠️</span>
+            <h2 class="minecraft-font section-title mb-3">¿Necesitas ayuda?</h2>
+            <p style="color:#e2e8f0; font-size:1.1rem;">Si tienes problemas con la instalación o necesitas soporte, contáctanos</p>
+        </div>
+        
+        <div class="row justify-content-center g-4">
+            <div class="col-md-5">
+                <div class="card border-0 shadow-lg h-100" style="background:rgba(17,24,39,0.95); transition: transform 0.3s ease;">
+                    <div class="card-body text-center p-4">
+                        <div style="font-size:3rem; margin-bottom:1rem;">💬</div>
+                        <h4 class="minecraft-font mb-3" style="color:#5865f2;">Discord</h4>
+                        <p style="color:#e2e8f0; margin-bottom:1.5rem;">Únete a nuestro servidor de Discord para soporte rápido y chat con la comunidad</p>
+                        <a href="https://discord.gg/5qk4QKY2HE" target="_blank" class="btn btn-primary btn-lg" style="background:#5865f2; border:none; border-radius:25px; padding:12px 30px; font-weight:bold; transition:all 0.3s ease;">
+                            <i style="margin-right:8px;">🔗</i>Unirse al Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-5">
+                <div class="card border-0 shadow-lg h-100" style="background:rgba(17,24,39,0.95); transition: transform 0.3s ease;">
+                    <div class="card-body text-center p-4">
+                        <div style="font-size:3rem; margin-bottom:1rem;">📱</div>
+                        <h4 class="minecraft-font mb-3" style="color:#25d366;">WhatsApp</h4>
+                        <p style="color:#e2e8f0; margin-bottom:1.5rem;">Contacto directo por WhatsApp para soporte personalizado y resolución de problemas</p>
+                        <a href="https://wa.me/59174402990" target="_blank" class="btn btn-success btn-lg" style="background:#25d366; border:none; border-radius:25px; padding:12px 30px; font-weight:bold; transition:all 0.3s ease;">
+                            <i style="margin-right:8px;">📞</i>+591 744-02990
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <p style="color:#a0aec0; font-size:0.9rem;">
+                <strong>Horario de atención:</strong> Lunes a Domingo, 9:00 AM - 10:00 PM (GMT-4)
+            </p>
         </div>
     </div>
 </section>
